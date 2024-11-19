@@ -1,3 +1,7 @@
+---
+tag: Robotics
+tags: archived
+---
 
 
 Create a Google Doc to document these, and future, topics.
@@ -252,7 +256,7 @@ Start by creating a new Arduino sketch in the IDE, naming it after you project -
 
 ![[Screen_Shot_2022-05-20_at_2.55.05_pm.png|Screen Shot 2022-05-20 at 2.55.05 pm.png]]
 
-$* \normalsize \mathcal {\color{black} \colorbox {orange}  {Save, Commit and Push Changes to Github!}}$ 
+![[commonBlocks#Commit & Push]]
 
 ## Coding
 
@@ -260,7 +264,7 @@ To code this project, you’ll be approaching each section at a time, starting w
 
 Afterwards, then it’s the setup() function, then loop() then finally the Custom Functions.
 
-![[Robotics/_shared/_projects/Smart Device/_images/Structure_of_an_Arduino_Sketch_example_with_code.png]]
+![[Structure_of_an_Arduino_Sketch_example_with_code.png]]
 
 <aside>
 ‼️ The pin numbers listed in this section must be individually confirmed to ensure they match your wiring diagram and other requirements.

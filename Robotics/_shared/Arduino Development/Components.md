@@ -1,3 +1,6 @@
+---
+tag: Robotics
+---
 # Components
 
 These pages introduce you to the individual components, how to wire them to an Arduino and how to code them. 
@@ -18,9 +21,9 @@ Arduino![[componentButton.png|Components%202d764b607ce348ce969155580686dab7/KY-0
 
 [[Piezo Buzzer|Piezo Buzzer]]
 
-![[componentSonarHCSR04.png|Components%202d764b607ce348ce969155580686dab7/177109536.png]]
+![[componentSonarHCSR04.png]]
 
-[[HC SR04)](Ultrasonic Sensor (HC SR04|Ultrasonic Sensor (HC SR04)]]%200d5a12bf6d0e48fcad71ede1a3e7f94b.md)
+[[Ultrasonic Sensor (HC SR04)]]
 
 ![[componentGPS.jpeg|Components%202d764b607ce348ce969155580686dab7/image_xJq6mduAcY.jpeg]]
 

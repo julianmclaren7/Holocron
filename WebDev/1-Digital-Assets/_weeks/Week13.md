@@ -1,22 +1,4 @@
-$\color{black} \fcolorbox{lightgreen}{lightgreen} {Overview}$
 
-The goals for this topic are:
-
-- User eXperience (UX) Updates including:
-    - Flash Messages
-    - Error Handling
-    - Current User
-    - Navbar Updates
-
-<aside> <img src="/icons/list_orange.svg" alt="/icons/list_orange.svg" width="40px" /> $\utilde {\color{black} \fcolorbox{darkorange}{darkorange} {Table of Contents}}$
-
-</aside>
-
-$\color{black} \fcolorbox{lightblue}{lightblue} {Submission}$
-
-In the Google Classroom Assignment, submit the following:
-
-- Record video of functionality implemented
 
 ---
 
@@ -24,7 +6,7 @@ In the Google Classroom Assignment, submit the following:
 
 Watch the video/s supplied to understand the topics for this week.
 
-[https://youtu.be/9Rq9TR5569I](https://youtu.be/9Rq9TR5569I)
+![https://youtu.be/9Rq9TR5569I](https://youtu.be/9Rq9TR5569I)
 
 ---
 
@@ -54,23 +36,22 @@ Luckily the project being built allows for a easy implementation of a flash mess
 
 Open `app.py` and add `flash` to the `from flask import….` line of code.
 
-![Screen Shot 2022-08-09 at 9.50.41 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7d194475-45c8-4b39-b37a-f3d097bdc197/Screen_Shot_2022-08-09_at_9.50.41_am.png)
-
+![[flashImport.png]]
 # Update Routes
 
 Update routes where feedback is important to the user. For instance, the password reset route. It would be useful for the user to get confirmation that the password has been changed.
 
 To add a flash message, the command is: `flash("Message")`.
 
-<aside> ‼️ As a rule of thumb, add the flash statements near the end of the process but before any return statement, as shown here.
+> [!info] As a rule of thumb, add the flash statements near the end of the process but before any return statement, as shown here.
 
-</aside>
 
-![Screen Shot 2022-08-09 at 9.52.45 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a35e6c61-1a91-4e5b-a815-460b6aedd3a4/Screen_Shot_2022-08-09_at_9.52.45_am.png)
+
+![[flashSetMessage.png]]
 
 Add appropriate messages to other routes, such as `loggout`, `contact`, and `User Registration`.
 
-$\utilde {\color{black} \fcolorbox{darkorange}{darkorange} {Commit and Push to Github}}$
+![[commonBlocks#Commit & Push]]
 
 # Update Template
 
@@ -78,7 +59,7 @@ Open `templates/base.html` and decide where you want the messages to appear. The
 
 Wherever the messages are to appear in your code, add the following code block.
 
-```
+```jinja2
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         <ul class="flashes">
@@ -90,14 +71,12 @@ Wherever the messages are to appear in your code, add the following code block.
 {% endwith %}
 ```
 
-<aside> ‼️ Make sure you don’t put your message output into a block that will be overridden.
+> [!info] Make sure you don’t put your message output into a block that will be overridden.
 
-</aside>
 
 This example shows that messages will appears just below the navbar.
 
-![Screen Shot 2022-08-09 at 10.18.13 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b94bf635-9bac-4aa8-83bf-94c7936cee72/Screen_Shot_2022-08-09_at_10.18.13_am.png)
-
+![[flashMessageCode.png]]
 # Flash CSS
 
 Currently, the messages appear very simply, as a dot list. Ideally the messages need to draw the users attention, so should stand out.
@@ -113,15 +92,14 @@ Open `static/site.css` and add the following CSS
 
 Test out a flash message and you should see it appear similar to the one shown.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b184e85-619e-4821-953f-43ab6c909423/172a54bf-0857-48b2-abe2-adba43c99dad/Untitled.png)
+![[flashMessageDemo.png]]
 
 You can expand on this CSS to make the messages stand out even more by updating the CSS, as shown here.
 
 Modify the CSS to make the messages appear the way you wish to.
 
-<aside> 💡 Find CSS code on the web, or use generative AI, to assist you.
+> [!info] Find CSS code on the web, or use generative AI, to assist you.
 
-</aside>
 
 ```css
 .flashes {
@@ -135,11 +113,12 @@ Modify the CSS to make the messages appear the way you wish to.
 }
 ```
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b184e85-619e-4821-953f-43ab6c909423/559f6c6a-9754-48c0-8144-a017063c8cd6/Untitled.png)
+
+![[flashMessageDemoWithCSS.png]]
 
 # Demonstration
 
-![2022-08-09 10-19-24.2022-08-09 10_22_39.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b0a8e258-d62d-487c-b66b-da807547bde8/2022-08-09_10-19-24.2022-08-09_10_22_39.gif)
+![[flashMessageSystemSuccess.gif]]
 
 ## Error Handling
 
@@ -155,7 +134,7 @@ There are a number of issues with this page.
 
 It is possible to build custom ‘error’ pages to keep the user ‘within’ the website and allow them to continue using the site.
 
-![Screen Shot 2022-08-09 at 10.44.41 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b1306bac-1d9a-4f1c-b6c1-d6bdbeb3ecaf/Screen_Shot_2022-08-09_at_10.44.41_am.png)
+![[errInternalServerError.png]]
 
 # HTML Pages
 
@@ -182,15 +161,15 @@ Create a html page in the templates folder called `500.html`. Include the defaul
 
 In `cellContent2`, add a message to the user to indicate that there is a problem, but in a more user friendly way than the example above.
 
-<aside> ‼️ Consider what the user would want to see on this page.
+> [!info] Consider what the user would want to see on this page.
 
-</aside>
+![[errUserFriendlyError.png]]
 
-![Screen Shot 2022-08-09 at 10.51.28 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d9561b9-7474-473b-9ad8-66195cf6f185/Screen_Shot_2022-08-09_at_10.51.28_am.png)
+
 
 You can choose how you want the messages to display. Using Bootstraps built-in Alerts can be a quick and easy solution, such as:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b184e85-619e-4821-953f-43ab6c909423/152e2687-affb-4225-891e-ad06e147b5f3/Untitled.png)
+![[errFileNotFound.png]]
 
 ```html
 <div class="alert alert-danger" role="alert">
@@ -204,14 +183,12 @@ Repeat this process for a `404.html` error page for if the page doesn’t exist.
 
 Open `app.py` and add the following routes.
 
-<aside> 💡 These routes capture any `404` or `500` HTTP errors and instead of showing the standard error for the browser, it will show a custom built error, using based on the template. From a UX point of view, this ‘keeps’ the user within the site and can allow them to rectify the error by returning to other pages.
+> [!important] These routes capture any `404` or `500` HTTP errors and instead of showing the standard error for the browser, it will show a custom built error, using based on the template. From a UX point of view, this ‘keeps’ the user within the site and can allow them to rectify the error by returning to other pages.
+> - 404 error - Not Found
+> - 500 error - Internal Server Error
+> 
+> You can find information on HTTP errors here: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
-- 404 error - Not Found
-- 500 error - Internal Server Error
-
-You can find information on HTTP errors here: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-
-</aside>
 
 ```python
 # Error Handlers
@@ -228,29 +205,35 @@ def internal_server_error(e):
 
 Run the project and attempt to access a page that doesn’t exist. Make sure the custom error page loads.
 
-![Screen Shot 2022-08-09 at 10.55.44 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ea2df3a-9cfc-4130-a1e6-d95508d9c0f2/Screen_Shot_2022-08-09_at_10.55.44_am.png)
+![[errCustomErrorPage.png]]
+
 
 To force the page to load correctly, you may need to **turn off** the FLASK_DEBUG setting. To do so, click on Edit Configurations under the Flask ([app.py](http://app.py)) dropdown.
 
-![Screen Shot 2022-09-05 at 9.16.43 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/964bdc8a-8df0-48e8-83b9-edb96fb728da/Screen_Shot_2022-09-05_at_9.16.43_am.png)
+![[errConfigurations.png]]
+
+
 
 Uncheck the box, and click ok.
 
-![Screen Shot 2022-09-05 at 9.17.34 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/770623b4-6750-4447-b5db-44e89baab168/Screen_Shot_2022-09-05_at_9.17.34_am.png)
+![[errConfigurationsTurnOffDebug.png]]
+
+
 
 Then, in `index.html` comment out the last line of code to force an error.
 
-![Screen Shot 2022-09-05 at 9.18.34 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a5f0e182-bf7a-4c39-a639-3f88142b9d72/Screen_Shot_2022-09-05_at_9.18.34_am.png)
+![[errTemplateCode.png]]
+
+
 
 Rerun the site and the 500 error page should appear.
 
 # Example error pages
 
-![pMGfBE5gnyuzxa6BGKAi3Q-970-80.jpg.webp](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/115cde18-ac5d-4fbd-9fb6-80f8a7b5baa8/pMGfBE5gnyuzxa6BGKAi3Q-970-80.jpg.webp)
+![[errExample1.webp]]
 
-![mYKbf3DSinvWnEzmHkEnCE-970-80.jpg.webp](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/428d83ef-79cb-487e-96f3-79288a7b055d/mYKbf3DSinvWnEzmHkEnCE-970-80.jpg.webp)
-
-![pbtqaZH7Q9QcrVDnuJomQT-970-80.jpg.webp](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ce00eda7-e74c-4f36-b6f2-f00d630d1e9e/pbtqaZH7Q9QcrVDnuJomQT-970-80.jpg.webp)
+![[errExample2.webp]]
+![[errExample3.webp]]
 
 ## Current User Variable
 
@@ -262,7 +245,7 @@ Open `app.py` and **update EVERY route** **rendering a template** to include the
 
 For instance, the homepage route needs to have the `render_template` line of code updated as shown.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b184e85-619e-4821-953f-43ab6c909423/a5ef45bf-76e9-47b8-9981-7e2bb30576f7/Untitled.png)
+![[currentUserToRoute.png]]
 
 ## Dynamic Navbar
 
@@ -278,11 +261,12 @@ As the current user details is being sent to the template to be rendered, you ca
 
 Open `templates/base.html` and find the registration and login links.
 
-![Screen Shot 2022-09-19 at 9.17.10 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/da66cdb0-e857-421e-8bb0-488cf238e3b8/Screen_Shot_2022-09-19_at_9.17.10_am.png)
+![[dynNavLinks.png]]
 
 Surrounding these two links, add an `if` statement to check to see if the user is anonymous. This means that the user has **not** logged in yet.
 
-![Screen Shot 2022-09-19 at 9.18.45 am.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e3ad516-5209-4385-b321-dbc5dafbba55/Screen_Shot_2022-09-19_at_9.18.45_am.png)
+![[dynNavCheckAnon.png]]
+
 
 ```python
 {% if user.is_anonymous %}
@@ -296,7 +280,7 @@ The next step is to extend this by adding in an {% else %} section to only show 
 
 In the example shown, you can see that the **Registration** and **Login** links are shown if the user is not logged in (`is_anonymous`) and the **Profile**, **Photos**, **Logout** and **Reset Password** Links are shown if the user is logged in (`is_anonymous` is false)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8b184e85-619e-4821-953f-43ab6c909423/43c10524-aa33-4420-a1e8-2232b6c4ade0/Untitled.png)
+![[dynNavAnonVsRegistered.png]]
 
 ---
 

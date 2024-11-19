@@ -1,8 +1,12 @@
+---
+tag: Robotics
+---
 # GPS - Neo6M
 
 Starting Guide
 
-[[NEO-6m) with Arduino](https://create.arduino.cc/projecthub/ruchir1674/how-to-interface-gps-module-neo-6m-with-arduino-8f90ad|How to Interface GPS Module (NEO-6m) with Arduino]]
+[How to Interface GPS Module (NEO-6m)](https://create.arduino.cc/projecthub/ruchir1674/how-to-interface-gps-module-neo-6m-with-arduino-8f90ad)
+
 
 ## Pinout
 
